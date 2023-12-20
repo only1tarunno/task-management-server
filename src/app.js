@@ -5,12 +5,16 @@ const app = express();
 
 // routers
 const authRoutes = require("./routes/Authentication/authentication");
+const allUsers = require("./routes/User/user");
 
 // middlewares
 applyMiddleWares(app);
 
 // jwt related api
 app.use(authRoutes);
+
+// user related api
+app.use(allUsers);
 
 // server health check api
 app.get("/", (req, res) => {
