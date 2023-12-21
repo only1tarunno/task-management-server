@@ -17,6 +17,14 @@ const TaskSchema = new Schema({
     type: String,
     required: true,
   },
+  email: {
+    type: String,
+    required: true,
+  },
+  status: {
+    type: String,
+    required: true,
+  },
 });
 
 const Task = model("Task", TaskSchema);

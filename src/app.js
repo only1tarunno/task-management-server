@@ -6,6 +6,7 @@ const app = express();
 // routers
 const authRoutes = require("./routes/Authentication/authentication");
 const allUsers = require("./routes/User/user");
+const alltask = require("./routes/Task/Task");
 
 // middlewares
 applyMiddleWares(app);
@@ -15,6 +16,9 @@ app.use(authRoutes);
 
 // user related api
 app.use(allUsers);
+
+// task related api
+app.use(alltask);
 
 // server health check api
 app.get("/", (req, res) => {
